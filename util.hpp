@@ -6,7 +6,7 @@ using namespace std;
 
 using ll = long long;
 using ld = long double;
-template<class T> using greater_queue = priority_queue<T>;
+template<class T> using greater_queue = priority_queue<T,vector<T>,greater<T>>;
 template<class T> using uset = unordered_set<T>;
 template<class T,class U> using umap = unordered_map<T,U>;
 #define rep(i,s,n) for (int i = (s); i < (n); i++)
