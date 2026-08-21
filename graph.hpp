@@ -262,3 +262,25 @@ class Graph {
 		return {total_cost, used};
 	}
 };
+
+vector<long long> dijkstra_dense(const vector<vector<long long>>& g, int s=0) {
+	const long long inf = numeric_limits<long long>::max()/2;
+	int n = g.size();
+	vector<long long> dist(n, inf);
+	vector<bool> used(n, false);
+	dist[s] = 0;
+	for (int i=0; i<n; i++) {
+		int v = -1;
+		for (int j=0; j<n; j++) {
+			if (!used[j] && (v == -1 || dist[j] < dist[v])) v = j;
+		}
+		if (v == - 1 || dist[v] == inf) break;
+		used[v] = true;
+		for (int u=0; u<n; u++) {
+			if (g[v][u] == inf) continue;
+			dist[u] = min(dist[u], dist[v]+g[v][u]);
+		}
+	}
+	for (int i = 0; i < n; i++) if (dist[i] == inf) dist[i] = -1;
+	return dist;
+}
