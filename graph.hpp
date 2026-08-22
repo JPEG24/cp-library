@@ -1,23 +1,18 @@
 #include <vector>
 using namespace std;
-
-#include "lib/unionfind.hpp"
+using ll = long long;
 
 struct Edge {
 	int from, to;
-	long long cost;
+	ll cost;
 	int id;
-	Edge(int from=0, int to=0, long long cost=0, int id=0) : from(from), to(to), cost(cost), id(id) {}
+	tuple<ll,int,int,int> tp;
+	Edge(int from=0, int to=0, ll cost=0, int id=0) : from(from), to(to), cost(cost), id(id) {
+		tp = make_tuple(cost, from, to, id);
+	}
 
-	bool operator==(const Edge& other) const {
-		return from == other.from && to == other.to && cost == other.cost && id == other.id;
-	}
-	bool operator<(const Edge& other) const {
-		if (cost != other.cost) return cost < other.cost;
-		if (from != other.from) return from < other.from;
-		if (to != other.to) return to < other.to;
-		return id < other.id;
-	}
+	bool operator==(const Edge& other) const { return tp == other.tp; }
+	bool operator<(const Edge& other) const { return tp < other.tp; }
 };
 
 struct Graph {

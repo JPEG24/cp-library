@@ -1,31 +1,32 @@
 #include <vector>
 #include <utility>
 using namespace std;
+using ll = long long;
 
 struct Sieve {
   int n;
   vector<int> f, primes;
   Sieve(int n=1):n(n), f(n+1) {
     f[0] = f[1] = -1;
-    for (long long i = 2; i <= n; ++i) {
+    for (ll i = 2; i <= n; ++i) {
       if (f[i]) continue;
       primes.push_back(i);
       f[i] = i;
-      for (long long j = i*i; j <= n; j += i) {
+      for (ll j = i*i; j <= n; j += i) {
         if (!f[j]) f[j] = i;
       }
     }
   }
-  bool isPrime(long long x) {
+  bool isPrime(ll x) {
     if (x <= n) return f[x] == x;
 
-    for (long long p : primes) {
+    for (ll p : primes) {
       if (p * p > x) return true;
       if (x % p == 0) return false;
     }
     return true;
   }
-  vector<int> factorList(long long x) {
+  vector<int> factorList(ll x) {
     vector<int> res;
     while (x > n) {
       bool found = false;
@@ -62,8 +63,8 @@ struct Sieve {
     }
     return res;
   }
-  vector<pair<long long,int>> factor(long long x) {
-    vector<pair<long long,int>> res;
+  vector<pair<ll,int>> factor(ll x) {
+    vector<pair<ll,int>> res;
     for (int p : primes) {
       int y = 0;
       while (x%p == 0) x /= p, ++y;

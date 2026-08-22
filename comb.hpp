@@ -4,9 +4,6 @@ using namespace std;
 using namespace atcoder;
 using mint = modint998244353;
 
-// combination mod prime
-// https://youtu.be/8uowVvQ_-Mo?t=6002
-// https://youtu.be/Tgd_zLfRZOQ?t=9928
 struct modinv {
   int n; vector<mint> d;
   modinv(): n(2), d({0,1}) {}
