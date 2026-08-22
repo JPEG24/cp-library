@@ -3,47 +3,47 @@
 using namespace std;
 
 template <class S, S (*op)(S, S), S (*e)()>
-struct segtree {
-private:
-	int _n, size, log;
-	vector<S> d;
+class segtree {
+	private:
+	int siz = 1;
+	vector<S> dat;
 
-public:
-	segtree(int n) : _n(n) {
-		size = 1;
-		log = 0;
-		while (size < _n) {
-			size <<= 1;
-			log++;
-		}
-		d.assign(2 * size, e());
+	public:
+	segtree(int n=0) {
+		init(n);
+	}
+
+	void init(int n) {
+		siz = 1;
+		while (siz < n) siz *= 2;
+		dat.assign(siz * 2, e());
 	}
 
 	void apply(int l, int r, S x) {
-		assert(0 <= l && l <= r && r <= _n);
+		assert(0 <= l && l <= r && r <= siz);
 
-		l += size;
-		r += size;
+		l += siz;
+		r += siz;
 
 		while (l < r) {
-			if (l & 1) d[l] = op(d[l], x), l++;
-			if (r & 1) --r, d[r] = op(d[r], x);
-			l >>= 1;
-			r >>= 1;
+			if (l & 1) dat[l] = op(dat[l], x), l++;
+			if (r & 1) --r, dat[r] = op(dat[r], x);
+			l /= 2;
+			r /= 2;
 		}
 	}
 
-	S get(int p) const {
-		assert(0 <= p && p < _n);
+	S get(int p) {
+		assert(0 <= p && p < siz);
 
-		S res = e();
-		p += size;
+		p += siz;
+		S ans = e();
 
-		while (p) {
-			res = op(res, d[p]);
-			p >>= 1;
+		while (p >= 1) {
+			ans = op(ans, dat[p]);
+			p /= 2;
 		}
 
-		return res;
+		return ans;
 	}
 };
