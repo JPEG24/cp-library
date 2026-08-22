@@ -3,13 +3,13 @@
 using namespace std;
 
 template <class S, S (*op)(S, S), S (*e)()>
-class segtree {
+class SegmentTree {
 	private:
 	int siz = 1;
 	vector<S> dat;
 
 	public:
-	segtree(int n=0) {
+	SegmentTree(int n=0) {
 		init(n);
 	}
 
