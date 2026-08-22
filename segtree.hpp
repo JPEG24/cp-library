@@ -10,13 +10,21 @@ class SegmentTree {
 
 	public:
 	SegmentTree(int n=0) {
-		init(n);
-	}
-
-	void init(int n) {
 		siz = 1;
 		while (siz < n) siz *= 2;
 		dat.assign(siz * 2, e());
+	}
+
+	void set(int p, S x) {
+		assert(0 <= p && p < siz);
+
+		p += siz;
+		dat[p] = x;
+
+		while (p > 1) {
+			p /= 2;
+			dat[p] = op(dat[p * 2], dat[p * 2 + 1]);
+		}
 	}
 
 	void apply(int l, int r, S x) {
