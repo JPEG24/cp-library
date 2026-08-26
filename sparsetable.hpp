@@ -1,46 +1,42 @@
 #include <vector>
 using namespace std;
 
-template<class S, S (*op)(S, S)>
+template<class S, S (*op)(S,S)>
 struct SparseTable {
-  private:
-  int n, lg;
-  vector<vector<S>> st;
+  int N, K;
   vector<int> log_table;
+  vector<vector<S>> table;
 
-  public:
-  SparseTable(const vector<S>& v=vector<S>()) {
-    build(v);
+  SparseTable(const vector<S>& A) {
+    build(A);
   }
 
-  void build(const vector<S>& v) {
-    n = (int)v.size();
+  void build(const vector<S>& A) {
+    N = A.size();
+    K = 0;
+    while (1 << (K + 1) <= N) ++K;
 
-    log_table.assign(n + 1, 0);
-    for (int i = 2; i <= n; i++) {
-      log_table[i] = log_table[i >> 1] + 1;
+    table.resize(K + 1);
+    table[0] = A;
+    for (int k = 0; k < K; ++k) {
+      int m = N - (1 << (k + 1)) + 1;
+      table[k + 1].resize(m);
+      for (int i = 0; i < m; ++i) {
+        table[k + 1][i] = op(table[k][i], table[k][i + (1 << k)]);
+      }
     }
 
-    lg = log_table[n] + 1;
-    st.assign(lg, vector<S>(n));
-
-    st[0] = v;
-
-    for (int k = 1; k < lg; k++) {
-      for (int i = 0; i + (1 << k) <= n; i++) {
-        st[k][i] = op(
-          st[k - 1][i],
-          st[k - 1][i + (1 << (k - 1))]
-        );
+    log_table.resize(N + 1);
+    for (int k = 0; k <= K; ++k) {
+      int s = 1 << k, t = min((1 << (k + 1)) - 1, N);
+      for (int n = s; n <= t; ++n) {
+        log_table[n] = k;
       }
     }
   }
 
-  S prod(int l, int r) const {
-    int k = log_table[r - l];
-    return op(
-      st[k][l],
-      st[k][r - (1 << k)]
-    );
+  S prod(int L, int R) {
+    int k = log_table[R - L];
+    return op(table[k][L], table[k][R - (1 << k)]);
   }
 };

@@ -17,20 +17,20 @@ struct Edge {
 
 struct Graph {
 	private:
-	int n, m = 0;
+	int N, M = 0;
 	
 	public:
 	vector<vector<Edge>> to;
 	vector<vector<Edge>> rto;
 	vector<Edge> edges;
 
-	Graph(int n=0) : n(n), to(n), rto(n) {}
+	Graph(int n=0) : N(n), to(n), rto(n) {}
 
 	void add(int a, int b, long long c=0) {
 		Edge e(a, b, c, edges.size());
 		to[a].emplace_back(e);
 		rto[b].emplace_back(e);
 		edges.emplace_back(e);
-		m++;
+		M++;
 	}
 };

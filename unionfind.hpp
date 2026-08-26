@@ -4,16 +4,16 @@ using namespace std;
 class UnionFind {
 private:
 	vector<int> par, siz;
-	int n, cnt;
+	int N, cnt;
 
 public:
 	UnionFind(int x=0) { init(x);}
 
-	void init(int x) {
-		par.assign(x, -1);
-		siz.assign(x, 1);
-		n = x;
-		cnt = x;
+	void init(int n) {
+		par.assign(n, -1);
+		siz.assign(n, 1);
+		N = n;
+		cnt = n;
 	}
 
 	int root(int v) {
@@ -44,9 +44,9 @@ public:
 
 	vector<vector<int>> groups() {
 		vector<vector<int>> res(cnt);
-		vector<int> idx(n,-1);
+		vector<int> idx(N,-1);
 		int now = 0;
-		for (int i = 0; i < n; i++) {
+		for (int i = 0; i < N; i++) {
 			int RootI = root(i);
 			if (idx[RootI] == -1) {
 				idx[RootI] = now++;
