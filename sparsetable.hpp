@@ -3,12 +3,14 @@ using namespace std;
 
 template<class S, S (*op)(S,S)>
 struct SparseTable {
+  private:
   int N, K;
   vector<int> log_table;
   vector<vector<S>> table;
 
-  SparseTable(const vector<S>& A) {
-    build(A);
+  public:
+  SparseTable(const vector<S>& A=vector<S>()) {
+    if (!A.empty()) build(A);
   }
 
   void build(const vector<S>& A) {

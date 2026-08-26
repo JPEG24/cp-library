@@ -7,7 +7,7 @@ private:
 	int N, cnt;
 
 public:
-	UnionFind(int x=0) { init(x);}
+	UnionFind(int n=0) { init(n);}
 
 	void init(int n) {
 		par.assign(n, -1);
