@@ -10,11 +10,7 @@ struct DisjointSparseTable {
   vector<int> log_table;
 
 	public:
-  DisjointSparseTable(const vector<S>& A=vector<S>()) : A(A) {
-		if (!A.empty()) build(A);
-	}
-
-	void build(const vector<S>& A) {
+  DisjointSparseTable(const vector<S>& A) : A(A) {
     N = A.size();
     int K = 0;
     while ((1 << K) < N) ++K;

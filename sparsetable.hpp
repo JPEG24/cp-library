@@ -9,11 +9,7 @@ struct SparseTable {
   vector<vector<S>> table;
 
   public:
-  SparseTable(const vector<S>& A=vector<S>()) {
-    if (!A.empty()) build(A);
-  }
-
-  void build(const vector<S>& A) {
+  SparseTable(const vector<S>& A) {
     N = A.size();
     K = 0;
     while (1 << (K + 1) <= N) ++K;
