@@ -14,7 +14,7 @@ class FenwickTree {
 	FenwickTree(const vector<T>& v) {
 		N = v.size();
 		bit = vector<T>(N + 1, 0);
-		for (int i = 0; i < N; i++) add(i + 1, v[i]);
+		for (int i = 0; i < N; i++) add(i, v[i]);
 	}
 
 	T sum(int i) const {
