@@ -11,7 +11,9 @@ class FenwickTree {
 	public:
 	FenwickTree(): FenwickTree(0) {}
 	FenwickTree(int n): FenwickTree(vector<T>(n, 0)) {}
-	FenwickTree(const vector<T>& v) {
+	FenwickTree(const vector<T>& v) { init(v); }
+
+	void init(const vector<T>& v) {
 		N = v.size();
 		bit = vector<T>(N + 1, 0);
 		for (int i = 0; i < N; i++) add(i, v[i]);
