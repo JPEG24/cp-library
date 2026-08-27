@@ -3,14 +3,14 @@ using namespace std;
 #include <atcoder/all>
 using namespace atcoder;
 
-#include "lib/util.hpp"
+#include "util.hpp"
 
 void solve() {
   
 }
 
 int main() {
-  cin.tie(nullptr)->sync_with_stdio(false);
+  cin.tie(nullptr) -> sync_with_stdio(false);
   cout << fixed << setprecision(15);
 
   int t = 1;
