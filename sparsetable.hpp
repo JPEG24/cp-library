@@ -34,9 +34,9 @@ class SparseTable {
     }
   }
 
-  S prod(int L, int R) const {
-    assert(0 <= L && L <= R && R <= N);
-    int k = log_table[R - L];
-    return op(table[k][L], table[k][R - (1 << k)]);
+  S prod(int l, int r) const {
+    assert(0 <= l && l <= r && r <= N);
+    int k = log_table[r - l];
+    return op(table[k][l], table[k][r - (1 << k)]);
   }
 };
