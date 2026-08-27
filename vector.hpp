@@ -4,7 +4,7 @@ using namespace std;
 using ld = long double;
 
 struct V {
-	static constexpr ld eps = 1e-9;
+  static constexpr ld eps = 1e-9;
   ld x, y;
   V(ld x=0, ld y=0): x(x), y(y) {}
   V& operator+=(const V& v) { x += v.x; y += v.y; return *this; }
