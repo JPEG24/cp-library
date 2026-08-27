@@ -35,6 +35,7 @@ jobs:
           # Specify patterns
           # include: your-own-include/
           exclude: |
+                atcoder/
                 tools/
                 .github/
           # If you have config.toml
