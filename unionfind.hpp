@@ -7,7 +7,7 @@ private:
 	int N, cnt;
 
 public:
-	UnionFind(int n=0) : N(n), cnt(n) {
+	UnionFind(int n=0): N(n), cnt(n) {
 		par = vector<int>(N, -1);
 		siz = vector<int>(N, 1);
 	}

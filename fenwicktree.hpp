@@ -9,7 +9,8 @@ class FenwickTree {
 	vector<T> bit;
 
 	public:
-	FenwickTree(int n=0) : N(n), bit(n + 1, 0) {}
+	FenwickTree(): FenwickTree(0) {}
+	FenwickTree(int n): FenwickTree(vector<T>(n, 0)) {}
 	FenwickTree(const vector<T>& v) {
 		N = v.size();
 		bit = vector<T>(N + 1, 0);
@@ -28,14 +29,15 @@ class FenwickTree {
 
 	T sum(int l, int r) const {
 		assert(0 <= l && l <= r && r <= N);
-		return sum(r) - sum(l - 1);
+		return sum(r) - sum(l);
 	}
 
-	T add(int i, T x) {
-		assert(0 <= i && i <= N);
-		while (i <= N) {
-			bit[i] += x;
-			i += -i & i;
+	void add(int p, T x) {
+		assert(0 <= p && p < N);
+		p++;
+		while (p <= N) {
+			bit[p] += x;
+			p += -p & p;
 		}
 	}
 };

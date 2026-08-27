@@ -13,8 +13,8 @@ class SegmentTree {
 	}
 
 	public:
-	SegmentTree() : SegmentTree(0) {}
-	SegmentTree(int n) : SegmentTree(vector<S>(n, e())) {}
+	SegmentTree(): SegmentTree(0) {}
+	SegmentTree(int n): SegmentTree(vector<S>(n, e())) {}
 	SegmentTree(const vector<S>& v) {
 		N = v.size();
 		siz = 1;

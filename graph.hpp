@@ -7,7 +7,7 @@ struct Edge {
 	ll cost;
 	int id;
 	tuple<ll,int,int,int> tp;
-	Edge(int from=0, int to=0, ll cost=0, int id=0) : from(from), to(to), cost(cost), id(id) {
+	Edge(int from=0, int to=0, ll cost=0, int id=0): from(from), to(to), cost(cost), id(id) {
 		tp = make_tuple(cost, from, to, id);
 	}
 
@@ -24,7 +24,7 @@ struct Graph {
 	vector<vector<Edge>> rto;
 	vector<Edge> edges;
 
-	Graph(int n=0) : N(n), to(n), rto(n) {}
+	Graph(int n=0): N(n), to(n), rto(n) {}
 
 	void add(int a, int b, long long c=0) {
 		Edge e(a, b, c, edges.size());

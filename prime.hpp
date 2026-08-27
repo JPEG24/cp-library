@@ -6,7 +6,7 @@ using ll = long long;
 struct Sieve {
   int n;
   vector<int> f, primes;
-  Sieve(int n=1):n(n), f(n+1) {
+  Sieve(int n=1): n(n), f(n+1) {
     f[0] = f[1] = -1;
     for (ll i = 2; i <= n; ++i) {
       if (f[i]) continue;
@@ -26,11 +26,11 @@ struct Sieve {
     }
     return true;
   }
-  vector<int> factorList(ll x) {
-    vector<int> res;
+  vector<ll> factorList(ll x) {
+    vector<ll> res;
     while (x > n) {
       bool found = false;
-      for (int p : primes) {
+      for (ll p : primes) {
         if (1ll * p * p > x) break;
         if (x % p == 0) {
           res.push_back(p);
@@ -51,7 +51,7 @@ struct Sieve {
     return res;
   }
   vector<pair<int,int>> factor(int x) {
-    vector<int> fl = factorList(x);
+    vector<ll> fl = factorList(x);
     if (fl.size() == 0) return {};
     vector<pair<int,int>> res(1, pair<int,int>(fl[0], 0));
     for (int p : fl) {
