@@ -33,8 +33,7 @@ jobs:
         with:
           output-path: verify_files.json
           # Specify patterns
-          include: |
-                ac-library/
+          # include: your-own-include/
           exclude: |
                 tools/
                 .github/
