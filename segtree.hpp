@@ -1,5 +1,4 @@
 #include <vector>
-#include <algorithm>
 #include <cassert>
 using namespace std;
 
@@ -26,7 +25,7 @@ class SegmentTree {
 		for (int i = siz - 1; i >= 1; i--) update(i);
 	}
 
-	S set(int p, S x) {
+	void set(int p, S x) {
 		assert(0 <= p && p < N);
 		p += siz;
 		data[p] = x;
