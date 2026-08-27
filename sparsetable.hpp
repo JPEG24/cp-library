@@ -1,8 +1,9 @@
 #include <vector>
+#include <cassert>
 using namespace std;
 
 template<class S, S (*op)(S,S)>
-struct SparseTable {
+class SparseTable {
   private:
   int N, K;
   vector<int> log_table;
@@ -33,7 +34,8 @@ struct SparseTable {
     }
   }
 
-  S prod(int L, int R) {
+  S prod(int L, int R) const {
+    assert(0 <= L && L <= R && R <= N);
     int k = log_table[R - L];
     return op(table[k][L], table[k][R - (1 << k)]);
   }
