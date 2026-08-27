@@ -7,23 +7,19 @@ private:
 	int N, cnt;
 
 public:
-	UnionFind(int n=0) { init(n);}
-
-	void init(int n) {
-		par.assign(n, -1);
-		siz.assign(n, 1);
-		N = n;
-		cnt = n;
+	UnionFind(int n=0) : N(n), cnt(n) {
+		par = vector<int>(N, -1);
+		siz = vector<int>(N, 1);
 	}
 
-	int root(int v) {
+	int leader(int v) {
 		if (par[v] == -1) return v;
-		return par[v] = root(par[v]);
+		return par[v] = leader(par[v]);
 	}
 
 	bool merge(int u, int v) {
-		int RootU = root(u);
-		int RootV = root(v);
+		int RootU = leader(u);
+		int RootV = leader(v);
 		if (RootU == RootV) return false;
 		if (siz[RootU] < siz[RootV]) {
 			par[RootU] = RootV;
@@ -36,18 +32,18 @@ public:
 		return true;
 	}
 
-	bool same(int u, int v) { return root(u) == root(v);}
+	bool same(int u, int v) { return leader(u) == leader(v); }
 
-	int size(int v) { return siz[root(v)];}
+	int size(int v) { return siz[leader(v)]; }
 
-	int count() { return cnt;}
+	int count() { return cnt; }
 
 	vector<vector<int>> groups() {
 		vector<vector<int>> res(cnt);
 		vector<int> idx(N,-1);
 		int now = 0;
 		for (int i = 0; i < N; i++) {
-			int RootI = root(i);
+			int RootI = leader(i);
 			if (idx[RootI] == -1) {
 				idx[RootI] = now++;
 			}
