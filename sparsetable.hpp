@@ -10,9 +10,8 @@ class SparseTable {
   vector<vector<S>> table;
 
   public:
-  SparseTable(const vector<S>& A=vector<S>()) {
-    init(A);
-  }
+  SparseTable() : N(0), K(0) {}
+  SparseTable(const vector<S>& A) { init(A); }
 
   void init(const vector<S>& A) {
     N = A.size();

@@ -10,7 +10,7 @@ using namespace atcoder;
 int op(int a, int b) { return min(a, b); }
 
 void solve() {
-	int N, Q;
+  int N, Q;
   cin >> N >> Q;
   vector<int> a(N);
   rep(i,0,N) cin >> a[i];

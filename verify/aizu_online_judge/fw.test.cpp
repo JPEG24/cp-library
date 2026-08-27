@@ -8,21 +8,21 @@ using namespace atcoder;
 #include "fenwicktree.hpp"
 
 void solve() {
-	int n, q;
-	cin >> n >> q;
-	fenwick_tree<int> fw(n);
-	rep(i,0,q) {
-		int com, x, y;
-		cin >> com >> x >> y;
-		if (com == 0) {
-			x--;
-			fw.add(x,y);
-		} else {
-			x--; y--;
-			int ans = fw.sum(x,y+1);
-			cout << ans << '\n';
-		}
-	}
+  int n, q;
+  cin >> n >> q;
+  fenwick_tree<int> fw(n);
+  rep(i,0,q) {
+    int com, x, y;
+    cin >> com >> x >> y;
+    if (com == 0) {
+      x--;
+      fw.add(x,y);
+    } else {
+      x--; y--;
+      int ans = fw.sum(x,y+1);
+      cout << ans << '\n';
+    }
+  }
 }
 
 int main() {
