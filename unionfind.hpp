@@ -1,7 +1,7 @@
 #include <vector>
 using namespace std;
 
-class UnionFind {
+struct UnionFind {
 private:
   vector<int> par, siz;
   int N, cnt;

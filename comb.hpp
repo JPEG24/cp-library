@@ -5,12 +5,9 @@ using namespace atcoder;
 
 template <class mint>
 struct Combination {
+  private:
   int n;
   vector<mint> inv, fact, ifact;
-
-  Combination(): n(1), inv({0, 1}), fact({1, 1}), ifact({1, 1}) {
-    inv[1] = 1;
-  }
 
   void expand(int m) {
     if (m <= n) return;
@@ -28,6 +25,9 @@ struct Combination {
     n = m;
   }
 
+  public:
+  Combination(): n(1), inv({0, 1}), fact({1, 1}), ifact({1, 1}) {}
+
   mint comb(int n, int k) {
     if (k < 0 || k > n) return 0;
     expand(n);
@@ -36,5 +36,16 @@ struct Combination {
 
   mint operator()(int n, int k) {
     return comb(n, k);
+  }
+
+  mint perm(int n, int k) {
+    if (k < 0 || k > n) return 0;
+    expand(n);
+    return fact[n] * ifact[n - k];
+  }
+
+  mint homo(int n, int k) {
+    expand(n + k - 1);
+    return comb(n + k - 1, k);
   }
 };

@@ -3,7 +3,7 @@
 using namespace std;
 
 template <class T>
-class FenwickTree {
+struct FenwickTree {
   private:
   int N;
   vector<T> bit;

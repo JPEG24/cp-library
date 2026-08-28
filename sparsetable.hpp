@@ -3,7 +3,7 @@
 using namespace std;
 
 template<class S, S (*op)(S,S)>
-class SparseTable {
+struct SparseTable {
   private:
   int N, K;
   vector<int> log_table;
