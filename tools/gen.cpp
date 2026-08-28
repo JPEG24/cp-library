@@ -3,7 +3,7 @@ using namespace std;
 #include <atcoder/all>
 using namespace atcoder;
 
-#include "util.hpp"
+#include "lib/util.hpp"
 
 int randint(int l, int r) {
   static mt19937 mt(random_device{}());
