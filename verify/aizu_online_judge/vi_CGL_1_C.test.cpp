@@ -5,7 +5,7 @@ using namespace std;
 using namespace atcoder;
 
 #include "lib/util.hpp"
-#include "vector_int.hpp"
+#include "lib/vector_int.hpp"
 
 void solve() {
   V p0, p1;

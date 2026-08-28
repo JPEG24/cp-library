@@ -5,7 +5,7 @@ using namespace std;
 using namespace atcoder;
 
 #include "lib/util.hpp"
-#include "sparsetable.hpp"
+#include "lib/sparsetable.hpp"
 
 int op(int a, int b) { return min(a, b); }
 

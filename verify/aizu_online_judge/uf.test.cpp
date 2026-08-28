@@ -5,7 +5,7 @@ using namespace std;
 using namespace atcoder;
 
 #include "lib/util.hpp"
-#include "unionfind.hpp"
+#include "lib/unionfind.hpp"
 
 void solve() {
   int n, q;

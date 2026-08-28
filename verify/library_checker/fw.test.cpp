@@ -5,7 +5,7 @@ using namespace std;
 using namespace atcoder;
 
 #include "lib/util.hpp"
-#include "fenwicktree.hpp"
+#include "lib/fenwicktree.hpp"
 
 void solve() {
   int N, Q;

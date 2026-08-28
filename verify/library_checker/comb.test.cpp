@@ -5,7 +5,7 @@ using namespace std;
 using namespace atcoder;
 
 #include "lib/util.hpp"
-#include "comb.hpp"
+#include "lib/comb.hpp"
 using mint = modint;
 
 int main() {
