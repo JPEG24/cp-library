@@ -5,7 +5,7 @@ using namespace std;
 using namespace atcoder;
 
 #include "../../lib/util.hpp"
-#include "../../lib/../../lib/graph/kruskal.hpp"
+#include "../../lib/graph/kruskal.hpp"
 
 void solve() {
   int n, m;
