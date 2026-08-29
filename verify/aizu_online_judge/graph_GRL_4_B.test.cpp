@@ -1,4 +1,4 @@
-// competitive-verfier: PROBLEM https://onlinejudge.u-aizu.ac.jp/problems/GRL_4_B
+// competitive-verifier: PROBLEM https://onlinejudge.u-aizu.ac.jp/problems/GRL_4_B
 #include <bits/stdc++.h>
 using namespace std;
 #include <atcoder/all>

@@ -1,4 +1,4 @@
-// competitive-verfier: PROBLEM https://judge.yosupo.jp/problem/minimum_spanning_tree
+// competitive-verifier: PROBLEM https://judge.yosupo.jp/problem/minimum_spanning_tree
 #include <bits/stdc++.h>
 using namespace std;
 #include <atcoder/all>
