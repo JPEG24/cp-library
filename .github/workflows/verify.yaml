@@ -37,7 +37,6 @@ jobs:
           exclude: |
                 atcoder/
                 tools/
-                verify/
                 .github/
           # If you have config.toml
           # config: .verify-helper/config.toml
