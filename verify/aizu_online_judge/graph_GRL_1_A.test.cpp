@@ -4,8 +4,8 @@ using namespace std;
 #include <atcoder/all>
 using namespace atcoder;
 
-#include "util.hpp"
-#include "graph/dijkstra.hpp"
+#include "../../lib/util.hpp"
+#include "../../lib/graph/dijkstra.hpp"
 
 void solve() {
   int n, m, r;

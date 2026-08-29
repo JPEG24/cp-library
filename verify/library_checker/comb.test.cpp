@@ -4,8 +4,8 @@ using namespace std;
 #include <atcoder/all>
 using namespace atcoder;
 
-#include "util.hpp"
-#include "math/comb.hpp"
+#include "../../lib/util.hpp"
+#include "../../lib/math/comb.hpp"
 using mint = modint;
 
 int main() {

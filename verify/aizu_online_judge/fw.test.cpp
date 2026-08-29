@@ -4,8 +4,8 @@ using namespace std;
 #include <atcoder/all>
 using namespace atcoder;
 
-#include "util.hpp"
-#include "struct/fenwick_tree.hpp"
+#include "../../lib/util.hpp"
+#include "../../lib/struct/fenwick_tree.hpp"
 
 void solve() {
   int n, q;
