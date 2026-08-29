@@ -36,7 +36,7 @@ jobs:
           # include: your-own-include/
           exclude: |
                 .github/
-                lib/atcoder/
+                atcoder/
                 lib/tools/
           # If you have config.toml
           # config: .verify-helper/config.toml
