@@ -4,8 +4,8 @@ using namespace std;
 #include <atcoder/all>
 using namespace atcoder;
 
-#include "lib/util.hpp"
-#include "lib/graph.hpp"
+#include "util.hpp"
+#include "graph/floyd-warshall.hpp"
 
 void solve() {
   int n, m;
@@ -23,7 +23,7 @@ void solve() {
     return;
   }
 
-  auto dist = Warshall_Floyd(g);
+  auto dist = Floyd_Warshall(g);
   rep(i,0,n) rep(j,0,n) {
     if (dist[i][j] == g.INF) cout << "INF";
     else cout << dist[i][j];

@@ -4,8 +4,8 @@ using namespace std;
 #include <atcoder/all>
 using namespace atcoder;
 
-#include "lib/util.hpp"
-#include "lib/sparsetable.hpp"
+#include "util.hpp"
+#include "struct/sparse_table.hpp"
 
 int op(int a, int b) { return min(a, b); }
 

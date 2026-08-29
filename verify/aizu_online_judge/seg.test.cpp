@@ -4,8 +4,8 @@ using namespace std;
 #include <atcoder/all>
 using namespace atcoder;
 
-#include "lib/util.hpp"
-#include "lib/segtree.hpp"
+#include "util.hpp"
+#include "struct/segtree.hpp"
 
 int op(int a, int b) { return min(a,b); }
 int e() { return INT_MAX; }

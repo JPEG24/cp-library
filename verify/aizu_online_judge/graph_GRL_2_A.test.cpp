@@ -4,8 +4,8 @@ using namespace std;
 #include <atcoder/all>
 using namespace atcoder;
 
-#include "lib/util.hpp"
-#include "lib/graph.hpp"
+#include "util.hpp"
+#include "graph/kruskal.hpp"
 
 void solve() {
   int n, m;

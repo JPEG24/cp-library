@@ -4,8 +4,8 @@ using namespace std;
 #include <atcoder/all>
 using namespace atcoder;
 
-#include "lib/util.hpp"
-#include "lib/unionfind.hpp"
+#include "util.hpp"
+#include "graph/union-find.hpp"
 
 void solve() {
   int n, q;

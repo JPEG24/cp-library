@@ -4,8 +4,8 @@ using namespace std;
 #include <atcoder/all>
 using namespace atcoder;
 
-#include "lib/util.hpp"
-#include "lib/vector.hpp"
+#include "util.hpp"
+#include "geom/vector.hpp"
 
 void solve() {
   V p0, p1, p2, p3;
