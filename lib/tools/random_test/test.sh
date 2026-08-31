@@ -8,7 +8,7 @@ while true; do
   timeout 2s ./random_test/naive < random_test/in.txt > random_test/out2.txt
 
   if ! diff random_test/out1.txt random_test/out2.txt; then
-    echo "found"
+    echo "found ${cnt}"
     break
   else
     echo "match ${cnt}"
