@@ -2,11 +2,11 @@
 using namespace std;
 
 struct UnionFind {
-private:
+  private:
   vector<int> par, siz;
   int N, cnt;
 
-public:
+  public:
   UnionFind(int n=0) { init(n); }
 
   void init(int n) {
@@ -22,16 +22,12 @@ public:
   }
 
   bool merge(int u, int v) {
-    int RootU = leader(u);
-    int RootV = leader(v);
-    if (RootU == RootV) return false;
-    if (siz[RootU] < siz[RootV]) {
-      par[RootU] = RootV;
-      siz[RootV] = siz[RootU] + siz[RootV];
-    } else {
-      par[RootV] = RootU;
-      siz[RootU] = siz[RootU] + siz[RootV];
-    }
+    u = leader(u);
+    v = leader(v);
+    if (u == v) return false;
+    if (siz[u] > siz[v]) swap(u,v);
+    par[u] = v;
+    siz[v] += siz[u];
     cnt--;
     return true;
   }
@@ -47,11 +43,11 @@ public:
     vector<int> idx(N,-1);
     int now = 0;
     for (int i = 0; i < N; i++) {
-      int RootI = leader(i);
-      if (idx[RootI] == -1) {
-        idx[RootI] = now++;
+      int v = leader(i);
+      if (idx[v] == -1) {
+        idx[v] = now++;
       }
-      res[idx[RootI]].push_back(i);
+      res[idx[v]].push_back(i);
     }
     return res;
   }
