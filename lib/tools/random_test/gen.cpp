@@ -25,9 +25,9 @@ int main() {
   cin.tie(nullptr) -> sync_with_stdio(false);
   cout << fixed << setprecision(15);
 
-  int t = 1;
-  // t = randint(1,r);
-  for (int ti = 0; ti < t; ti++) gen();
+  int T = 1;
+  // T = randint(1,r);
+  while (T--) gen();
 
   return 0;
 }
