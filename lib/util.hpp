@@ -15,7 +15,7 @@ template<class T,class U> using umap = unordered_map<T,U>;
 #define REP1(i,n,s) for (int i = (n); i >= s; i--)
 #define all(a) (a).begin(), (a).end()
 #define rall(a) (a).rbegin(), (a).rend()
-template<class T> int sz(T a) { return a.size(); }
+template<class T> int sz(const T& a) { return a.size(); }
 template<class T> bool chmax(T& a, const T& b) { return (a < b ? (a = b, true) : false); }
 template<class T> bool chmin(T& a, const T& b) { return (a > b ? (a = b, true) : false); }
-void YesNo(bool b) { cout << (b ? "Yes\n" : "No\n"); }
+void YesNo(const bool& b) { cout << (b ? "Yes\n" : "No\n"); }
