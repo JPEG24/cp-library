@@ -13,9 +13,9 @@ int main() {
   cin.tie(nullptr) -> sync_with_stdio(false);
   cout << fixed << setprecision(15);
 
-  int t = 1;
-  // cin >> t;
-  for (int ti = 0; ti < t; ti++) solve();
+  int T = 1;
+  // cin >> T;
+  while (T--) solve();
 
   return 0;
 }
