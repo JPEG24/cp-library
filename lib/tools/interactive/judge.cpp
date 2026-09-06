@@ -26,7 +26,7 @@ int main() {
   cout << fixed << setprecision(15);
 
   int T = 1;
-  // T = randint(1,r);
+  // cout << T << '\n';
   while (T--) gen();
 
   return 0;
