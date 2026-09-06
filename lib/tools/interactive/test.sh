@@ -15,7 +15,7 @@ cnt=0
 while true; do
   ((cnt++))
 
-  ./a.out < interactive/pipe \
+  timeout 4s ./a.out < interactive/pipe \
     | tee interactive/out.txt \
     | ./interactive/judge \
     | tee interactive/judge.txt > interactive/pipe

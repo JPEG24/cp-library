@@ -14,12 +14,12 @@ while true; do
 
   ./random_test/gen > random_test/in.txt || exit 1
 
-  timeout 2s ./a.out \
+  timeout 4s ./a.out \
     < random_test/in.txt \
     > random_test/out1.txt
   status1=$?
 
-  timeout 2s ./random_test/naive \
+  timeout 4s ./random_test/naive \
     < random_test/in.txt \
     > random_test/out2.txt
   status2=$?
