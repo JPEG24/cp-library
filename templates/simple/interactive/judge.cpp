@@ -2,8 +2,7 @@
 using namespace std;
 #include <atcoder/all>
 using namespace atcoder;
-
-#include "lib/util.hpp"
+#define rep(i,n) for (int i = 0; i < (n); i++)
 
 int randint(int l, int r) {
   static mt19937 mt(random_device{}());
@@ -17,20 +16,10 @@ long double randdouble(long double l, long double r) {
   return dist(mt);
 }
 
-void gen() {
-  
-}
-
 int main() {
-  cin.tie(nullptr) -> sync_with_stdio(false);
+  cin.tie(nullptr)->sync_with_stdio(false);
   cout << fixed << setprecision(15);
 
-  int T = 1;
-  // cout << T << '\n';
-  while (T--) gen();
 
   return 0;
 }
-
-// inter/judge.cpp
-// rtest/gen.cpp
