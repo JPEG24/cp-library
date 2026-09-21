@@ -37,7 +37,8 @@ jobs:
           exclude: |
                 .github/
                 atcoder/
-                lib/tools/
+                templates/
+                tools/
           # If you have config.toml
           # config: .verify-helper/config.toml
       - name: parse-doxygen
