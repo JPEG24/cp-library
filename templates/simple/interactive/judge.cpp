@@ -3,6 +3,7 @@ using namespace std;
 #include <atcoder/all>
 using namespace atcoder;
 #define rep(i,n) for (int i = 0; i < (n); i++)
+using ll = long long;
 
 int randint(int l, int r) {
   static mt19937 mt(random_device{}());
