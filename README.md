@@ -3,3 +3,5 @@
 [![GitHub Pages](https://img.shields.io/static/v1?label=GitHub+Pages&message=+&color=blue&logo=github)](https://JPEG24.github.io/cp-library)
 
 競技プログラミング用のC++ライブラリです。
+
+このリポジトリは CC 1.0 Universal ライセンスの下で公開されています。
