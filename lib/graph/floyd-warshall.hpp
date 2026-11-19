@@ -5,7 +5,7 @@ using namespace std;
 
 using ll = long long;
 
-vector<vector<ll>> Floyd_Warshall(const Graph& g) {
+vector<vector<ll>> FloydWarshall(const Graph& g) {
   vector<vector<ll>> dist(g.N, vector<ll>(g.N, g.INF));
   for (int i = 0; i < g.N; i++) dist[i][i] = 0;
   for (auto e : g.edges) {

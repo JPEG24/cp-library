@@ -5,7 +5,7 @@ using namespace std;
 
 using ll = long long;
 
-pair<bool,vector<ll>> Bellman_Ford(const Graph& g, int s=0) {
+pair<bool,vector<ll>> BellmanFord(const Graph& g, int s=0) {
   assert(0 <= s && s < g.N);
   vector<ll> dist(g.N, g.INF);
   dist[s] = 0;
@@ -24,7 +24,7 @@ pair<bool,vector<ll>> Bellman_Ford(const Graph& g, int s=0) {
   return {false,{}};
 }
 
-pair<bool, vector<ll>> Bellman_Ford(const Graph& g, const vector<int>& s) {
+pair<bool, vector<ll>> BellmanFord(const Graph& g, const vector<int>& s) {
   Graph ng(g.N+1);
   for (auto e : g.edges) {
     ng.add(e.from, e.to, e.cost);
@@ -34,7 +34,7 @@ pair<bool, vector<ll>> Bellman_Ford(const Graph& g, const vector<int>& s) {
 
     ng.add(g.N, ns, 0);
   }
-  auto [ok, dist] = Bellman_Ford(ng, g.N);
+  auto [ok, dist] = BellmanFord(ng, g.N);
   if (!ok) return {false, {}};
   dist.pop_back();
   return {true, dist};
