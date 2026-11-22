@@ -18,7 +18,7 @@ void solve() {
     g.add(s,t,d);
   }
 
-  auto [ok,dist] = Bellman_Ford(g,r);
+  auto [ok,dist] = BellmanFord(g,r);
   if (!ok) {
     cout << "NEGATIVE CYCLE" << endl;
   } else {

@@ -23,7 +23,7 @@ void solve() {
     return;
   }
 
-  auto dist = Floyd_Warshall(g);
+  auto dist = FloydWarshall(g);
   rep(i,0,n) rep(j,0,n) {
     if (dist[i][j] == g.INF) cout << "INF";
     else cout << dist[i][j];
